@@ -1,0 +1,172 @@
+{
+    "fixtures": [
+        "sessions.reg",
+        "kitty.reg",
+        "Sessions/Demo"
+    ],
+    "programs": [
+        {
+            "name": "read-sessions",
+            "page": "api/quick-start.md",
+            "args": "",
+            "output": "Profiles: 1\nSelected: Demo\nconnection: ssh 127.0.0.1:22\nHost matches: 1\nMetadata only: no server connection."
+        },
+        {
+            "name": "read-kitty",
+            "page": "guide/kitty.md",
+            "args": "",
+            "output": "Variant: kitty\nSession: Demo\nTerminal type: xterm-256color\nPrivate key on the host: C:\\keys\\example.ppk\nMetadata only: key contents are not loaded."
+        },
+        {
+            "name": "preview-profile",
+            "page": "guide/writing.md",
+            "args": "",
+            "output": "Source profile: Demo\nDestination profile: Imported\nPlanned operations: create\nNative settings written: no"
+        }
+    ],
+    "assets": [
+        {
+            "name": "read-sessions",
+            "filename": "read-sessions.ts",
+            "language": "TypeScript"
+        },
+        {
+            "name": "read-sessions",
+            "filename": "read-sessions.js",
+            "language": "JavaScript"
+        },
+        {
+            "name": "read-sessions",
+            "filename": "read-sessions.mjs",
+            "language": "MJS"
+        },
+        {
+            "name": "read-sessions",
+            "filename": "read-sessions.cjs",
+            "language": "CommonJS"
+        },
+        {
+            "name": "read-kitty",
+            "filename": "read-kitty.ts",
+            "language": "TypeScript"
+        },
+        {
+            "name": "read-kitty",
+            "filename": "read-kitty.js",
+            "language": "JavaScript"
+        },
+        {
+            "name": "read-kitty",
+            "filename": "read-kitty.mjs",
+            "language": "MJS"
+        },
+        {
+            "name": "read-kitty",
+            "filename": "read-kitty.cjs",
+            "language": "CommonJS"
+        },
+        {
+            "name": "preview-profile",
+            "filename": "preview-profile.ts",
+            "language": "TypeScript"
+        },
+        {
+            "name": "preview-profile",
+            "filename": "preview-profile.js",
+            "language": "JavaScript"
+        },
+        {
+            "name": "preview-profile",
+            "filename": "preview-profile.mjs",
+            "language": "MJS"
+        },
+        {
+            "name": "preview-profile",
+            "filename": "preview-profile.cjs",
+            "language": "CommonJS"
+        }
+    ],
+    "cliCases": [
+        {
+            "heading": "Get one property",
+            "bin": "packages/cli/bin/cli.js",
+            "command": "putty-js",
+            "args": [
+                "get",
+                "Demo",
+                "host",
+                "--file",
+                "./sessions.reg",
+                "--json"
+            ],
+            "code": 0,
+            "stdout": "\"127.0.0.1\"",
+            "stderr": "",
+            "colored": false
+        },
+        {
+            "heading": "List profiles",
+            "bin": "packages/cli/bin/cli.js",
+            "command": "putty-js",
+            "args": [
+                "list",
+                "--file",
+                "./sessions.reg",
+                "--json"
+            ],
+            "code": 0,
+            "stdout": "[\n  {\n    \"path\": \"Demo\",\n    \"host\": \"127.0.0.1\",\n    \"protocol\": \"ssh\",\n    \"keyFile\": \"C:\\\\keys\\\\example.ppk\",\n    \"remoteDirectory\": \"\"\n  }\n]",
+            "stderr": "",
+            "colored": false
+        },
+        {
+            "heading": "Search metadata",
+            "bin": "packages/cli/bin/cli.js",
+            "command": "putty-js",
+            "args": [
+                "search",
+                "127.0.0.1",
+                "--file",
+                "./sessions.reg",
+                "--color"
+            ],
+            "code": 0,
+            "stdout": "Found 1 profile\n\n\u001b[36m┌\u001b[39m\u001b[36m──────────────────\u001b[39m\u001b[36m┬\u001b[39m\u001b[36m─────────────────────────────────\u001b[39m\u001b[36m┐\u001b[39m\n\u001b[36m│\u001b[39m \u001b[1m\u001b[37mLabel           \u001b[39m\u001b[22m \u001b[36m│\u001b[39m \u001b[1m\u001b[37mValue                          \u001b[39m\u001b[22m \u001b[36m│\u001b[39m\n\u001b[36m├\u001b[39m\u001b[36m──────────────────\u001b[39m\u001b[36m┼\u001b[39m\u001b[36m─────────────────────────────────\u001b[39m\u001b[36m┤\u001b[39m\n\u001b[36m│\u001b[39m Name             \u001b[36m│\u001b[39m Demo                            \u001b[36m│\u001b[39m\n\u001b[36m│\u001b[39m Path             \u001b[36m│\u001b[39m Demo                            \u001b[36m│\u001b[39m\n\u001b[36m│\u001b[39m Protocol         \u001b[36m│\u001b[39m ssh                             \u001b[36m│\u001b[39m\n\u001b[36m│\u001b[39m Host             \u001b[36m│\u001b[39m 127.0.0.1                       \u001b[36m│\u001b[39m\n\u001b[36m│\u001b[39m Port             \u001b[36m│\u001b[39m 22                              \u001b[36m│\u001b[39m\n\u001b[36m│\u001b[39m Username         \u001b[36m│\u001b[39m deploy                          \u001b[36m│\u001b[39m\n\u001b[36m│\u001b[39m Password         \u001b[36m│\u001b[39m                                 \u001b[36m│\u001b[39m\n\u001b[36m│\u001b[39m Passphrase       \u001b[36m│\u001b[39m                                 \u001b[36m│\u001b[39m\n\u001b[36m│\u001b[39m Credential state \u001b[36m│\u001b[39m not-stored                      \u001b[36m│\u001b[39m\n\u001b[36m│\u001b[39m Authentication   \u001b[36m│\u001b[39m connection/password: not-stored \u001b[36m│\u001b[39m\n\u001b[36m│\u001b[39m Private key      \u001b[36m│\u001b[39m C:\\keys\\example.ppk             \u001b[36m│\u001b[39m\n\u001b[36m│\u001b[39m Remote           \u001b[36m│\u001b[39m                                 \u001b[36m│\u001b[39m\n\u001b[36m└\u001b[39m\u001b[36m──────────────────\u001b[39m\u001b[36m┴\u001b[39m\u001b[36m─────────────────────────────────\u001b[39m\u001b[36m┘\u001b[39m",
+            "stderr": "",
+            "colored": true
+        },
+        {
+            "heading": "Missing profile",
+            "bin": "packages/cli/bin/cli.js",
+            "command": "putty-js",
+            "args": [
+                "get",
+                "Missing",
+                "--file",
+                "./sessions.reg",
+                "--json"
+            ],
+            "code": 1,
+            "stdout": "",
+            "stderr": "{\"error\":\"Could not find profile by path \\\"Missing\\\"\"}",
+            "colored": false
+        },
+        {
+            "heading": "KiTTY directory",
+            "bin": "packages/cli/bin/cli.js",
+            "command": "putty-js",
+            "args": [
+                "list",
+                "--variant",
+                "kitty",
+                "--directory",
+                "./Sessions",
+                "--json"
+            ],
+            "code": 0,
+            "stdout": "[\n  {\n    \"path\": \"Demo\",\n    \"host\": \"127.0.0.1\",\n    \"protocol\": \"ssh\",\n    \"keyFile\": \"C:\\\\keys\\\\example.ppk\",\n    \"remoteDirectory\": \"\"\n  }\n]",
+            "stderr": "",
+            "colored": false
+        }
+    ]
+}

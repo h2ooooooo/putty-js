@@ -1,0 +1,5 @@
+HostName\127.0.0.1\
+UserName\deploy\
+PortNumber\22\
+PublicKeyFile\C:%5Ckeys%5Cexample.ppk\
+TerminalType\xterm-256color\

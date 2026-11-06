@@ -1,0 +1,8 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Software\9bis.com\KiTTY\Sessions\Demo]
+"HostName"="127.0.0.1"
+"UserName"="deploy"
+"PortNumber"=dword:00000016
+"PublicKeyFile"="C:\\keys\\example.ppk"
+"TerminalType"="xterm-256color"
