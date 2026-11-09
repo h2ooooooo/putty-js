@@ -5,7 +5,7 @@ Use Node.js 22.22.2 or newer. Choose the API or CLI according to the task:
 ## API
 
 ```sh
-npm install @jalsoedesign/putty-core@rc
+npm install @jalsoedesign/putty-core
 ```
 
 The ESM package includes TypeScript declarations. Follow [language setup](/guide/examples) for TypeScript, JavaScript, MJS or CommonJS and run the [API quick start](/api/quick-start).
@@ -13,7 +13,7 @@ The ESM package includes TypeScript declarations. Follow [language setup](/guide
 ## CLI
 
 ```sh
-npm install --global @jalsoedesign/putty-cli@rc
+npm install --global @jalsoedesign/putty-cli
 putty-js --help
 ```
 
@@ -28,7 +28,7 @@ Supported files can be read without an installed native application. Live Window
 The reader and CLI keep their existing dependencies. Add the shared integration only for an explicit connection:
 
 ```sh
-npm install @jalsoedesign/putty-core@rc @jalsoedesign/portline-dockline@rc @jalsoedesign/dockline-ssh-client@rc
+npm install @jalsoedesign/putty-core @jalsoedesign/portline-dockline @jalsoedesign/dockline-ssh-client
 ```
 
 Install `@jalsoedesign/dockline-ftp-client` for FTP/FTPS, `dockline-sftp-client` for SFTP or `dockline-ssh-client` for SSH commands. These are shared clients, not application-specific connector packages. Follow [the complete scoped example](/api/integration) for exact source selection, authentication and host verification. Installing this SDK integration adds no network subcommands to the reader CLI.

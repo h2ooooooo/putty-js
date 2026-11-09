@@ -5,7 +5,7 @@ List, search and select a synthetic saved session without reading installed sett
 ## Install
 
 ```sh
-npm install --global @jalsoedesign/putty-cli@rc
+npm install --global @jalsoedesign/putty-cli
 ```
 
 For project-local use, install without `--global` and prefix commands with `npm exec --`. See [runtime requirements](/guide/installation).

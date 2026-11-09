@@ -7,8 +7,8 @@ Read PuTTY registry sessions and registry exports, plus supported KiTTY Sessions
 ## Install and read profiles
 
 ~~~sh
-npm install @jalsoedesign/putty-core@rc
-npm install --global @jalsoedesign/putty-cli@rc
+npm install @jalsoedesign/putty-core
+npm install --global @jalsoedesign/putty-cli
 ~~~
 
 ~~~ts
@@ -94,4 +94,4 @@ For complete source selection, language variants, runtime options and native-onl
 [connection execution guide](https://h2ooooooo.github.io/putty-js/api/integration). SSH fingerprints must use
 canonical SHA256 base64; trust callbacks never persist approval. The reader CLI gains no network commands.
 
-See [First release candidate](RELEASE_RC.md) for RC versions and installation commands.
+See [Stable release](RELEASE.md) for versions, installation commands and the compatibility policy.

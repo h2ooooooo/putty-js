@@ -5,8 +5,8 @@ Read PuTTY registry sessions and registry exports, plus supported KiTTY Sessions
 ## Install and read profiles
 
 ~~~sh
-npm install @jalsoedesign/putty-core@rc
-npm install --global @jalsoedesign/putty-cli@rc
+npm install @jalsoedesign/putty-core
+npm install --global @jalsoedesign/putty-cli
 ~~~
 
 ~~~ts
