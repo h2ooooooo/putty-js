@@ -93,3 +93,5 @@ Built-in live registry/process inspection requires Windows; explicit registry-ex
 KiTTY discovery reads `KITTY_INI_FILE` or kitty.ini beside the executable and recognizes `savemode=registry` and `savemode=dir`, using `configdir` for the latter. Missing/unsupported mode information leaves a running source unresolved. Encrypted `savemode=file` snapshots are not supported. An explicit file/directory/registry selection takes precedence.
 
 Source executable/version metadata is reported only when the process reader actually established it. Passing an arbitrary `--executable` path does not prove its file version or that the application is running. Native access exposes a selected session's stored values, not every application-wide preference or an editor for every PuTTY/KiTTY option. Only direct SSH has the supported normalized write projection; other native protocols remain unsupported connection records.
+
+For an explicit live operation after selecting a profile, use [the shared connection walkthrough](/api/integration). Native-only execution requirements are represented as `unsupportedOptions`; reading a profile does not grant permission to discard them.

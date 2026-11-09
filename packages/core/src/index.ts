@@ -42,6 +42,11 @@ export class PuttyProfileSource extends NativeProfileSource {
             const protocol = text(settings, 'Protocol', 'ssh').toLowerCase();
             const connection: ConnectionDefinition = {
                 id: 'connection',
+                unsupportedOptions: [
+                    ...(text(settings, 'ProxyMethod', '0') !== '0' ? ['ProxyMethod'] : []),
+                    ...(text(settings, 'RemoteCommand') ? ['RemoteCommand'] : []),
+                    ...(text(settings, 'SSHManualHostKeys') ? ['SSHManualHostKeys'] : []),
+                ],
                 ...(protocol === 'ssh' ? {kind: 'ssh' as const, protocol: 'ssh' as const} : {kind: 'unsupported' as const, protocol}),
                 endpoint: {
                     host: text(settings, 'HostName'),

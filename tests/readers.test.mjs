@@ -103,3 +103,16 @@ test('registry view and custom key are passed unchanged to the native provider',
     assert.equal(requested.hive, 'HKLM');
     assert.equal(source.list().length, 1);
 });
+
+test('normalized SSH definitions mark proxy and saved remote commands as execution blockers', () => {
+    const source = PuttyProfileSource.fromSessions({id: 'fixture', application: 'putty'}, [{
+        name: 'proxy', settings: {
+            HostName: 'ssh.example', ProxyMethod: '3', RemoteCommand: 'native-command',
+            SSHManualHostKeys: 'native-pin',
+        },
+    }]);
+
+    assert.deepEqual(source.get('proxy').connections[0].unsupportedOptions,
+        ['ProxyMethod', 'RemoteCommand', 'SSHManualHostKeys']);
+    assert.equal(source.get('proxy').connections[0].protocol, 'ssh');
+});

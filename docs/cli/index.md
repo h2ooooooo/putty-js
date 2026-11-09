@@ -13,3 +13,5 @@ Use `putty-js` to inspect saved settings, choose the native source and preview s
 [Writing commands](/cli/writing) separate preview from apply. [Automation and troubleshooting](/cli/automation) cover output streams and exit handling. Use the [complete inputs](/reference/cli-help) and [captured output reference](/reference/cli-output) for all profile-command cases.
 
 Commands inspect or explicitly change local settings; they do not open an SSH, transfer or database session. For code, use [API documentation](/api/).
+
+For an explicit remote connection, use the separate [shared execution SDK example](/api/integration). The profile CLI remains responsible for queries and guarded local settings changes; the integration adds no SSH, upload or database subcommands.

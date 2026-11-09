@@ -5,8 +5,8 @@ Read PuTTY registry sessions and registry exports, plus supported KiTTY Sessions
 ## Install and read profiles
 
 ~~~sh
-npm install @jalsoedesign/putty-core
-npm install --global @jalsoedesign/putty-cli
+npm install @jalsoedesign/putty-core@rc
+npm install --global @jalsoedesign/putty-cli@rc
 ~~~
 
 ~~~ts
@@ -44,3 +44,7 @@ Use the repository development guide for independent builds and packed-consumer 
 [Related libraries and applications](https://h2ooooooo.github.io/portline/ecosystem).
 
 MIT. See LICENSE. This project is independent of the application vendors.
+
+## Optional connection execution
+
+The CLI continues to query profiles and provide its documented local-settings operations; the shared integration adds no SSH/upload/database subcommands. Use the separate optional `@jalsoedesign/portline-dockline` SDK for an explicit scoped remote operation. See [complete source selection, trust and session examples](https://h2ooooooo.github.io/putty-js/api/integration). Install the protocol client for the requested capability; reader/CLI metadata use remains free of transport dependencies.

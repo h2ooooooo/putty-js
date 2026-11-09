@@ -68,3 +68,7 @@ Profiles can report a saved private-key path and SSH-agent settings. The reader 
 A source is a snapshot of the selected storage. Reopen it after settings change. Reading and searching do not connect to the server or change native settings.
 
 Use the [API quick start](/api/quick-start) or [CLI quick start](/cli/quick-start) to read a synthetic session. [Storage and discovery](/guide/storage) explains source selection; [profile writing](/guide/writing) covers separate preview/apply operations and their safeguards. Dockline provides live SSH and transfer operations when needed.
+
+## Shared execution after native interpretation
+
+The source now exposes normalized execution details alongside metadata. `@jalsoedesign/portline-dockline` performs the shared mapping and delegates live sessions to optional Dockline clients. Native-only requirements appear in `unsupportedOptions`; they are refused rather than dropped. Read [the scoped source-to-session walkthrough](/api/integration) for supported operations and explicit trust/authentication options.
